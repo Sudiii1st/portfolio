@@ -230,7 +230,71 @@
     </form>
   </div>
 </section>
+<p>
+import java.util.Scanner;<br>
 
+public class Book {
+    private int bookId;
+    private int pages;
+    private double price;
+<br>
+    // Method to input values
+    public void get() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter Book ID: ");
+        bookId = scanner.nextInt();
+
+        System.out.print("Enter Number of Pages: ");
+        pages = scanner.nextInt();
+
+        System.out.print("Enter Price: ");
+        price = scanner.nextDouble();
+    }
+<br>
+    // Method to display values
+    public void show() {
+        System.out.println("Book ID: " + bookId);
+        System.out.println("Number of Pages: " + pages);
+        System.out.println("Price: $" + price);
+    }
+<br>
+    // Method to set values using parameters
+    public void set(int bookId, int pages, double price) {
+        this.bookId = bookId;
+        this.pages = pages;
+        this.price = price;
+    }
+<br>
+    // Method to get the price
+    public double getPrice() {
+        return price;
+    }
+
+    public static void main(String[] args) {
+        // Example of how to use the Book class
+<br>
+        Book myBook = new Book();
+
+        // Using the get() function to input values
+        myBook.get();
+
+        // Using the show() function to display values
+        System.out.println("\nBook Details:");
+        myBook.show();
+<br>
+        // Using the set() function to set values using parameters
+        myBook.set(101, 300, 29.99);
+
+        // Using the show() function again to display updated values
+        System.out.println("\nUpdated Book Details:");
+        myBook.show();
+<br>
+        // Using the getPrice() function to get the price
+        System.out.println("\nBook Price: $" + myBook.getPrice());
+    }
+}
+</p>
 <div class="footer">
   <div class="copyright">
     <p>2024 Sudeys Ibrahim, All Right Reserved.</p>
